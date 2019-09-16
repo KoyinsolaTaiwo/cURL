@@ -1,0 +1,178 @@
+Question 3: 
+
+T:\DataRepLab\lab1>curl -v https://odetocode.com/odetocode.jpg
+* Expire in 0 ms for 6 (transfer 0x1d5dcfb5d40)
+* Expire in 1 ms for 1 (transfer 0x1d5dcfb5d40)
+* Expire in 0 ms for 1 (transfer 0x1d5dcfb5d40)
+* Expire in 2 ms for 1 (transfer 0x1d5dcfb5d40)
+* Expire in 2 ms for 1 (transfer 0x1d5dcfb5d40)
+* Expire in 3 ms for 1 (transfer 0x1d5dcfb5d40)
+* Expire in 4 ms for 1 (transfer 0x1d5dcfb5d40)
+*   Trying 168.62.48.183...
+* TCP_NODELAY set
+* Expire in 200 ms for 4 (transfer 0x1d5dcfb5d40)
+* Connected to odetocode.com (168.62.48.183) port 443 (#0)
+* schannel: SSL/TLS connection with odetocode.com port 443 (step 1/3)
+* schannel: checking server certificate revocation
+* schannel: sending initial handshake data: sending 178 bytes...
+* schannel: sent initial handshake data: sent 178 bytes
+* schannel: SSL/TLS connection with odetocode.com port 443 (step 2/3)
+* schannel: failed to receive handshake, need more data
+* schannel: SSL/TLS connection with odetocode.com port 443 (step 2/3)
+* schannel: encrypted data got 4096
+* schannel: encrypted data buffer: offset 4096 length 4096
+* schannel: received incomplete message, need more data
+* schannel: SSL/TLS connection with odetocode.com port 443 (step 2/3)
+* schannel: encrypted data got 337
+* schannel: encrypted data buffer: offset 4433 length 5120
+* schannel: sending next handshake data: sending 126 bytes...
+* schannel: SSL/TLS connection with odetocode.com port 443 (step 2/3)
+* schannel: encrypted data got 51
+* schannel: encrypted data buffer: offset 51 length 5120
+* schannel: SSL/TLS handshake complete
+* schannel: SSL/TLS connection with odetocode.com port 443 (step 3/3)
+* schannel: stored credential handle in session cach
+
+> GET /odetocode.jpg HTTP/1.1
+> Host: odetocode.com
+> User-Agent: curl/7.64.0
+> Accept: */*
+>
+
+* schannel: client wants to read 102400 bytes
+* schannel: encdata_buffer resized 103424
+* schannel: encrypted data buffer: offset 0 length 103424
+* schannel: encrypted data got 12060
+* schannel: encrypted data buffer: offset 12060 length 103424
+* schannel: decrypted data length: 3897
+* schannel: decrypted data added: 3897
+* schannel: decrypted data cached: offset 3897 length 102400
+* schannel: encrypted data length: 8134
+* schannel: encrypted data cached: offset 8134 length 103424
+* schannel: decrypted data length: 8105
+* schannel: decrypted data added: 8105
+* schannel: decrypted data cached: offset 12002 length 102400
+* schannel: encrypted data buffer: offset 0 length 103424
+* schannel: decrypted data buffer: offset 12002 length 102400
+* schannel: schannel_recv cleanup
+* schannel: decrypted data returned 12002
+* schannel: decrypted data buffer: offset 0 length 102400
+
+< HTTP/1.1 200 OK
+< Content-Length: 11751
+< Content-Type: image/jpeg
+< Last-Modified: Mon, 10 Dec 2012 02:44:57 GMT
+< Accept-Ranges: bytes
+< ETag: "64c77b5780d6cd1:0"
+< Server: Microsoft-IIS/10.0
+< X-Powered-By: ASP.NET
+< Date: Mon, 16 Sep 2019 09:28:49 GMT
+
+<
+Warning: Binary output can mess up your terminal. Use "--output -" to tell
+Warning: curl to output it to your terminal anyway, or consider "--output
+Warning: <FILE>" to save to a file.
+* Failed writing body (0 != 11751)
+* Closing connection 0
+
+
+Question 4:
+SAVED LINK AS HTTP-EASY.HTML. The downloaded file is different because the resource was moved.
+
+T:\DataRepLab\lab1>curl -o http-easy.html https://www.jmarshall.com/easy/http/
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 45240  100 45240    0     0   267k      0 --:--:-- --:--:-- --:--:--  267k
+
+
+T:\DataRepLab\lab1> curl -v http://www.jmarshall.com/easy/http/
+* Expire in 0 ms for 6 (transfer 0x1c39b704f90)
+* Expire in 1 ms for 1 (transfer 0x1c39b704f90)
+* Expire in 0 ms for 1 (transfer 0x1c39b704f90)
+* Expire in 2 ms for 1 (transfer 0x1c39b704f90)
+* Expire in 1 ms for 1 (transfer 0x1c39b704f90)
+* Expire in 1 ms for 1 (transfer 0x1c39b704f90)
+* Expire in 2 ms for 1 (transfer 0x1c39b704f90)
+*   Trying 213.108.104.108...
+* TCP_NODELAY set
+* Expire in 200 ms for 4 (transfer 0x1c39b704f90)
+* Connected to www.jmarshall.com (213.108.104.108) port 80 (#0)
+> GET /easy/http/ HTTP/1.1
+> Host: www.jmarshall.com
+> User-Agent: curl/7.64.0
+> Accept: */*
+>
+< HTTP/1.1 301 Moved Permanently
+< Date: Mon, 16 Sep 2019 09:57:53 GMT
+< Server: Apache
+< Location: https://www.jmarshall.com/easy/http/
+< Content-Length: 244
+< Content-Type: text/html; charset=iso-8859-1
+<
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="https://www.jmarshall.com/easy/http/">here</a>.</p>
+</body></html>
+* Connection #0 to host www.jmarshall.com left intact
+
+
+Question 5: 
+
+T:\DataRepLab\lab1>curl -o duckduckgo.html https://duckduckgo.com/
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  6174  100  6174    0     0   123k      0 --:--:-- --:--:-- --:--:--  123k
+
+changed the file to txt.
+
+	T:\DataRepLab\lab1>curl -v http://duckduckgo.com/ > duckduckgo.txt
+	* Expire in 0 ms for 6 (transfer 0x1efbc258540)
+	* Expire in 1 ms for 1 (transfer 0x1efbc258540)
+ 	 % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  	0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Expire in 5 ms for 1 (transfer 0x1efbc258540)
+	* Expire in 6 ms for 1 (transfer 0x1efbc258540)
+	*   Trying 79.125.105.113...	
+	* TCP_NODELAY set
+	* Expire in 149990 ms for 3 (transfer 0x1efbc258540)
+	* Expire in 200 ms for 4 (transfer 0x1efbc258540)
+	* Connected to duckduckgo.com (79.125.105.113) port 80 (#0)
+	> GET / HTTP/1.1
+	> Host: duckduckgo.com
+	> User-Agent: curl/7.64.0
+	> Accept: */*
+	>
+	< HTTP/1.1 301 Moved Permanently
+	< Server: nginx
+	< Date: Mon, 16 Sep 2019 10:09:05 GMT
+	< Content-Type: text/html
+	< Content-Length: 162
+	< Connection: keep-alive
+	< Location: https://duckduckgo.com/
+	< X-Frame-Options: SAMEORIGIN
+	< Content-Security-Policy: default-src https: blob: data: 'unsafe-inline' 'unsafe-eval'; frame-ancestors 'self'
+	< X-XSS-Protection: 1;mode=block
+	< X-Content-Type-Options: nosniff
+	< Referrer-Policy: origin
+	< Expect-CT: max-age=0
+	< Expires: Tue, 15 Sep 2020 10:09:05 GMT
+	< Cache-Control: max-age=31536000
+	<
+	{ [162 bytes data]
+	100   162  100   162    0     0   2492      0 --:--:-- --:--:-- --:--:--  2571
+		* Connection #0 to host duckduckgo.com left intact
+
+
+Question 6:
+http://duckduckgo.com/?q=gmit
+
+
+question 7
+
+http://duckduckgo.com/?q=gmit&format=json
+
+replace text after q to change your search
+
